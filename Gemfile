@@ -27,9 +27,6 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
-# MA: Provides a better error page for Rails and other Rack apps. [https://rubygems.org/gems/better_errors]
-gem 'better_errors', '~> 2.9', '>= 2.9.1'
-
 # MA: A modern CSS framework based on Flexbox [https://rubygems.org/gems/bulma-rails]
 gem 'bulma-rails', '~> 0.9.4'
 
@@ -75,7 +72,10 @@ group :development do
   # MA: Guard is a command line tool to easily handle events on file system modifications. [https://rubygems.org/gems/guard]
   gem 'guard', '~> 2.18'
   # MA: Guard::LiveReload automatically reloads your browser when 'view' files are modified. [https://rubygems.org/gems/guard-livereload]
-  gem 'guard-livereload', '~> 2.5', '>= 2.5.2'
+  gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
+
+  # MA: Provides a better error page for Rails and other Rack apps. [https://rubygems.org/gems/better_errors]
+  gem 'better_errors', '~> 2.9', '>= 2.9.1'
 end
 
 group :test do
