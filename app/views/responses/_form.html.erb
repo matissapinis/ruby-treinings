@@ -1,0 +1,25 @@
+
+<%= simple_form_for(@response) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :id %>
+    <%= f.input :undergrad_continent %>
+    <%= f.input :hb_a_1_1 %>
+    <%= f.input :hb_a_2_1 %>
+    <%= f.input :hb_a_3_1 %>
+    <%= f.input :dem_1 %>
+    <%= f.input :vb_1_1 %>
+    <%= f.input :vb_1_2 %>
+    <%= f.input :vb_1_3 %>
+    <%= f.input :vb_1_4 %>
+    <%= f.input :vb_1_5 %>
+    <%= f.input :dem_2 %>
+    <%= f.input :sr_1 %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

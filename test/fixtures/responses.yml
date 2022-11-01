@@ -1,0 +1,31 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  undergrad_continent: MyString
+  hb_a_1_1: 1.5
+  hb_a_2_1: 1.5
+  hb_a_3_1: 1.5
+  dem_1: MyString
+  vb_1_1: 1.5
+  vb_1_2: 1.5
+  vb_1_3: 1.5
+  vb_1_4: 1.5
+  vb_1_5: 1.5
+  dem_2: MyString
+  sr_1: MyString
+
+two:
+  id: 1
+  undergrad_continent: MyString
+  hb_a_1_1: 1.5
+  hb_a_2_1: 1.5
+  hb_a_3_1: 1.5
+  dem_1: MyString
+  vb_1_1: 1.5
+  vb_1_2: 1.5
+  vb_1_3: 1.5
+  vb_1_4: 1.5
+  vb_1_5: 1.5
+  dem_2: MyString
+  sr_1: MyString
