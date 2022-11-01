@@ -17,7 +17,7 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create response" do
     assert_difference("Response.count") do
-      post responses_url, params: { response: { dem_1: @response.dem_1, dem_2: @response.dem_2, hb_a_1_1: @response.hb_a_1_1, hb_a_2_1: @response.hb_a_2_1, hb_a_3_1: @response.hb_a_3_1, id: @response.id, sr_1: @response.sr_1, undergrad_continent: @response.undergrad_continent, vb_1_1: @response.vb_1_1, vb_1_2: @response.vb_1_2, vb_1_3: @response.vb_1_3, vb_1_4: @response.vb_1_4, vb_1_5: @response.vb_1_5 } }
+      post responses_url, params: { response: { dem_1: @response.dem_1, dem_2: @response.dem_2, hb_a_1_1: @response.hb_a_1_1, hb_a_2_1: @response.hb_a_2_1, hb_a_3_1: @response.hb_a_3_1, sr_1: @response.sr_1, undergrad_continent: @response.undergrad_continent, vb_1_1: @response.vb_1_1, vb_1_2: @response.vb_1_2, vb_1_3: @response.vb_1_3, vb_1_4: @response.vb_1_4, vb_1_5: @response.vb_1_5 } }
     end
 
     assert_redirected_to response_url(Response.last)
@@ -34,7 +34,7 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update response" do
-    patch response_url(@response), params: { response: { dem_1: @response.dem_1, dem_2: @response.dem_2, hb_a_1_1: @response.hb_a_1_1, hb_a_2_1: @response.hb_a_2_1, hb_a_3_1: @response.hb_a_3_1, id: @response.id, sr_1: @response.sr_1, undergrad_continent: @response.undergrad_continent, vb_1_1: @response.vb_1_1, vb_1_2: @response.vb_1_2, vb_1_3: @response.vb_1_3, vb_1_4: @response.vb_1_4, vb_1_5: @response.vb_1_5 } }
+    patch response_url(@response), params: { response: { dem_1: @response.dem_1, dem_2: @response.dem_2, hb_a_1_1: @response.hb_a_1_1, hb_a_2_1: @response.hb_a_2_1, hb_a_3_1: @response.hb_a_3_1, sr_1: @response.sr_1, undergrad_continent: @response.undergrad_continent, vb_1_1: @response.vb_1_1, vb_1_2: @response.vb_1_2, vb_1_3: @response.vb_1_3, vb_1_4: @response.vb_1_4, vb_1_5: @response.vb_1_5 } }
     assert_redirected_to response_url(@response)
   end
 

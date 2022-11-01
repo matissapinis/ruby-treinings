@@ -19,7 +19,6 @@ class ResponsesTest < ApplicationSystemTestCase
     fill_in "Hb a 1 1", with: @response.hb_a_1_1
     fill_in "Hb a 2 1", with: @response.hb_a_2_1
     fill_in "Hb a 3 1", with: @response.hb_a_3_1
-    fill_in "Id", with: @response.id
     fill_in "Sr 1", with: @response.sr_1
     fill_in "Undergrad continent", with: @response.undergrad_continent
     fill_in "Vb 1 1", with: @response.vb_1_1
@@ -42,7 +41,6 @@ class ResponsesTest < ApplicationSystemTestCase
     fill_in "Hb a 1 1", with: @response.hb_a_1_1
     fill_in "Hb a 2 1", with: @response.hb_a_2_1
     fill_in "Hb a 3 1", with: @response.hb_a_3_1
-    fill_in "Id", with: @response.id
     fill_in "Sr 1", with: @response.sr_1
     fill_in "Undergrad continent", with: @response.undergrad_continent
     fill_in "Vb 1 1", with: @response.vb_1_1

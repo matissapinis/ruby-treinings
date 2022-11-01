@@ -1,7 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id: 1
   undergrad_continent: MyString
   hb_a_1_1: 1.5
   hb_a_2_1: 1.5
@@ -16,7 +15,6 @@ one:
   sr_1: MyString
 
 two:
-  id: 1
   undergrad_continent: MyString
   hb_a_1_1: 1.5
   hb_a_2_1: 1.5

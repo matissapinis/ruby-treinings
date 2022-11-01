@@ -1,7 +1,6 @@
 class CreateResponses < ActiveRecord::Migration[7.0]
   def change
     create_table :responses do |t|
-      t.integer :id # Respondent ID
       t.string :undergrad_continent # Multiple option:  "In which region did you complete your undergraduate study?"
       t.float :hb_a_1_1 # Open numeric: "For the purposes of this question, assume that human scientific activity continues without major negative disruption. How many years until you expect: A 10% probability of HLMI existing?"
       t.float :hb_a_2_1 # Open numeric: "For the purposes of this question, assume that human scientific activity continues without major negative disruption. How many years until you expect: A 50% probability of HLMI existing?"
