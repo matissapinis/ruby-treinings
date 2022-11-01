@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :responses
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -7,6 +6,8 @@ Rails.application.routes.draw do
 
   # MA: 'results' view route via URL
   resources :results
+  resources :responses
   # MA: Application default view
   root "results#index"
+
 end

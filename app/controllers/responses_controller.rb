@@ -20,6 +20,8 @@ class ResponsesController < ApplicationController
   end
 
   # POST /responses or /responses.json
+  # MA: (Excel) ="Response.create!("&$B$2&": "&CHAR(34)&$B4&CHAR(34)&", "&$C$2&": "&$C4&", "&$D$2&": "&$D4&", "&$E$2&": "&$E4&", "&$F$2&": "&CHAR(34)&$F4&CHAR(34)&", "&$G$2&": "&$G4&", "&$H$2&": "&$H4&", "&$I$2&": "&$I4&", "&$J$2&": "&$J4&", "&$K$2&": "&$K4&", "&$L$2&": "&CHAR(34)&$L4&CHAR(34)&", "&$M$2&": "&CHAR(34)&$M4&CHAR(34)&")"
+  # MA: (irb>)  Response.create!(undergrad_continent: "Europe", hb_a_1_1: 10, hb_a_2_1: 50, hb_a_3_1: 300, dem_1: "A lot (e.g. \"I have thought enough to have my own views on the topic\")", vb_1_1: 64, vb_1_2: 20, vb_1_3: 3, vb_1_4: 3, vb_1_5: 10, dem_2: "A lot (e.g. \"I have thought enough to have my own views on the topic\")", sr_1: "More")
   def create
     @response = Response.new(response_params)
 
