@@ -6,6 +6,15 @@
 
 <%= link_to "New response", new_response_path %>
 
+<% # MA: Filtering implementation attempt [https://activerecord-hackery.github.io/ransack/getting-started/simple-mode/] %>
+<div>
+  <%= search_form_for @q, url: :responses do |form| %>
+    <%= form.label :undergrad_continent_cont %>
+    <%= form.search_field :undergrad_continent_cont %>
+    <%= form.submit %>
+  <% end %>
+</div>
+
 <% # MA: Drop down filter HTML table data by column: %>
 <% #= collection_select :response, :id, Response.all, :id, :undergrad_continent, prompt: true %>
 

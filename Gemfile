@@ -42,6 +42,9 @@ gem 'jquery-rails', '~> 4.5'
 # MA: jquery datatables for rails [https://rubygems.org/gems/jquery-datatables-rails]
 gem 'jquery-datatables-rails', '~> 3.4'
 
+# MA: Ransack is the successor to the MetaSearch gem. It improves and expands upon MetaSearch's functionality, but does not have a 100%-compatible API. [https://rubygems.org/gems/ransack]
+gem 'ransack', '~> 3.2', '>= 3.2.1'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
