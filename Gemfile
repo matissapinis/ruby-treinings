@@ -30,10 +30,16 @@ gem "jbuilder"
 # MA: A modern CSS framework based on Flexbox [https://rubygems.org/gems/bulma-rails]
 gem 'bulma-rails', '~> 0.9.4'
 
+# MA: The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web. http://getbootstrap.com [https://rubygems.org/gems/bootstrap]
+gem 'bootstrap', '~> 5.2', '>= 5.2.2'
+
 # MA: Forms made easy! [https://rubygems.org/gems/simple_form]
 gem 'simple_form', '~> 5.1'
 
-# MA: jquery datatables for rails
+# MA: This gem provides jQuery and the jQuery-ujs driver for your Rails 4+ application. [https://rubygems.org/gems/jquery-rails]
+gem 'jquery-rails', '~> 4.5'
+
+# MA: jquery datatables for rails [https://rubygems.org/gems/jquery-datatables-rails]
 gem 'jquery-datatables-rails', '~> 3.4'
 
 # Use Redis adapter to run Action Cable in production

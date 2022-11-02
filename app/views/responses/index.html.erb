@@ -6,9 +6,12 @@
 
 <%= link_to "New response", new_response_path %>
 
+<% # MA: Drop down filter HTML table data by column: %>
+<% #= collection_select :response, :id, Response.all, :id, :undergrad_continent, prompt: true %>
+
 <% # MA: Display database records in plain HTML table: %>
 <div id="responses">
-  <table>
+  <table id="responses">
     <thead>
       <tr>
         <th>#</th>
