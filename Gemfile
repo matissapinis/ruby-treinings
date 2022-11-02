@@ -33,6 +33,9 @@ gem 'bulma-rails', '~> 0.9.4'
 # MA: Forms made easy! [https://rubygems.org/gems/simple_form]
 gem 'simple_form', '~> 5.1'
 
+# MA: jquery datatables for rails
+gem 'jquery-datatables-rails', '~> 3.4'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
