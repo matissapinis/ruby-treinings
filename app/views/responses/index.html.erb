@@ -12,37 +12,35 @@
 <% # MA: Display database records in plain HTML table: %>
 <div id="responses">
   <% # MA: Sortable table columns [http://railscasts.com/episodes/228-sortable-table-columns] %>
-  <table id="responses">
+  <table id="responses" class="content-table">
     <thead>
       <tr>
-        <th><%= sortable "id" %></th>
-        <th><%= sortable "undergrad_continent" %></th>
-        <th><%= sortable "hb_a_1_1" %></th>
-        <th><%= sortable "hb_a_2_1" %></th>
-        <th><%= sortable "hb_a_3_1" %></th>
-        <th><%= sortable "dem_1" %></th>
-        <th><%= sortable "vb_1_1" %></th>
-        <th><%= sortable "vb_1_2" %></th>
-        <th><%= sortable "vb_1_3" %></th>
-        <th><%= sortable "vb_1_4" %></th>
-        <th><%= sortable "vb_1_5" %></th>
-        <th><%= sortable "dem_2" %></th>
-        <th><%= sortable "sr_1" %></th>
-      </tr>
-      <tr>
-        <th>#</th>
-        <th>Undergraduate continent</th>
-        <th>Years(P(HLMI|Non-disruption):=10%)</th>
-        <th>Years(P(HLMI|Non-disruption):=50%)</th>
-        <th>Years(P(HLMI|Non-disruption):=90%)</th>
-        <th>HLMI timelines reflection</th>
-        <th>P(Impact=Extremely good|HLMI)</th>
-        <th>P(Impact=Net good|HLMI)</th>
-        <th>P(Impact=Neutral|HLMI)</th>
-        <th>P(Impact=Net bad|HLMI)</th>
-        <th>P(Impact=Extremely bad|HLMI)</th>
-        <th>HLMI impacts reflection</th>
-        <th>Priority(Safety|Current)</th>
+        <th><%= sortable "id", "Response ID" %></th>
+        <th><%= sortable "undergrad_continent", "In which region did you complete your undergraduate study?" %></th>
+        <th><%= sortable "hb_a_1_1", "For the purposes of this question, assume that human scientific activity continues without major negative disruption.
+          \n\nHow many years until you expect a 10% probability of HLMI existing?" %></th>
+        <th><%= sortable "hb_a_2_1", "For the purposes of this question, assume that human scientific activity continues without major negative disruption.
+          \n\nHow many years until you expect a 50% probability of HLMI existing?" %></th>
+        <th><%= sortable "hb_a_3_1", "For the purposes of this question, assume that human scientific activity continues without major negative disruption.
+          \n\nHow many years until you expect a 90% probability of HLMI existing?" %></th>
+        <th><%= sortable "dem_1", "How much thought have you given in the past to when HLMI (or something similar) will be developed?" %></th>
+        <th><%= sortable "vb_1_1", "Assume for the purpose of this question that HLMI will at some point exist.
+          \n\nHow positive or negative do you expect the overall impact of this to be on humanity, in the long run?
+          \n\nPlease answer by saying how probable you find the following kinds of impact, with probabilities adding to 100%: Extremely good (e.g. rapid growth in human flourishing)" %></th>
+        <th><%= sortable "vb_1_2", "Assume for the purpose of this question that HLMI will at some point exist.
+          \n\nHow positive or negative do you expect the overall impact of this to be on humanity, in the long run?
+          \n\nPlease answer by saying how probable you find the following kinds of impact, with probabilities adding to 100%: On balance good" %></th>
+        <th><%= sortable "vb_1_3", "Assume for the purpose of this question that HLMI will at some point exist.
+          \n\nHow positive or negative do you expect the overall impact of this to be on humanity, in the long run?
+          \n\nPlease answer by saying how probable you find the following kinds of impact, with probabilities adding to 100%: More or less neutral" %></th>
+        <th><%= sortable "vb_1_4", "Assume for the purpose of this question that HLMI will at some point exist.
+          \n\nHow positive or negative do you expect the overall impact of this to be on humanity, in the long run?
+          \n\nPlease answer by saying how probable you find the following kinds of impact, with probabilities adding to 100%: On balance bad" %></th>
+        <th><%= sortable "vb_1_5", "Assume for the purpose of this question that HLMI will at some point exist.
+          \n\nHow positive or negative do you expect the overall impact of this to be on humanity, in the long run?
+          \n\nPlease answer by saying how probable you find the following kinds of impact, with probabilities adding to 100%: Extremely bad (e.g. human extinction)" %></th>
+        <th><%= sortable "dem_2", "How much thought have you given in the past to social impacts of smarter-than-human machines?" %></th>
+        <th><%= sortable "sr_1", "How much should society prioritize AI safety research, relative to how much it is currently prioritized?" %></th>
       </tr>
     </thead>
     <tbody>
