@@ -1,9 +1,15 @@
 class ResponsesController < ApplicationController
   before_action :set_response, only: %i[ show edit update destroy ]
 
+  # MA: Sortable table columns [http://railscasts.com/episodes/228-sortable-table-columns]
+  helper_method :sort_column, :sort_direction
+
   # GET /responses or /responses.json
   def index
-    @responses = Response.all
+    # MA: Commenting out to try sortable table columns attempt:
+      # @responses = Response.all
+    # MA: Sortable table columns [http://railscasts.com/episodes/228-sortable-table-columns]
+    @responses = Response.order(sort_column + " " + sort_direction)
   end
 
   # GET /responses/1 or /responses/1.json
@@ -68,5 +74,14 @@ class ResponsesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def response_params
       params.require(:response).permit(:undergrad_continent, :hb_a_1_1, :hb_a_2_1, :hb_a_3_1, :dem_1, :vb_1_1, :vb_1_2, :vb_1_3, :vb_1_4, :vb_1_5, :dem_2, :sr_1)
+    end
+  
+    # MA: Sortable table columns [http://railscasts.com/episodes/228-sortable-table-columns]
+    def sort_column
+      Response.column_names.include?(params[:sort]) ? params[:sort] : "id"
+    end
+    
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 end
