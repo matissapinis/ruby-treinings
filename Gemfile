@@ -3,6 +3,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.0.2"
 
+# MA: Debugging 'fly deploy' issues
+#> [stage-3 7/7] RUN bin/rails fly:build:
+#20 2.482 rails aborted!
+#20 2.483 LoadError: cannot load such file -- sassc
+# MA: You can put the gem 'sassc-rails' line before the gem 'rails' line in your Gemfile as a workaround. [https://github.com/sass/sassc-rails/issues/114]
+gem 'sassc-rails'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
 
@@ -28,19 +35,19 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 # MA: A modern CSS framework based on Flexbox [https://rubygems.org/gems/bulma-rails]
-gem 'bulma-rails', '~> 0.9.4'
+# gem 'bulma-rails', '~> 0.9.4'
 
 # MA: The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web. http://getbootstrap.com [https://rubygems.org/gems/bootstrap]
-gem 'bootstrap', '~> 5.2', '>= 5.2.2'
+# gem 'bootstrap', '~> 5.2', '>= 5.2.2'
 
 # MA: Forms made easy! [https://rubygems.org/gems/simple_form]
 gem 'simple_form', '~> 5.1'
 
 # MA: This gem provides jQuery and the jQuery-ujs driver for your Rails 4+ application. [https://rubygems.org/gems/jquery-rails]
-gem 'jquery-rails', '~> 4.5'
+# gem 'jquery-rails', '~> 4.5'
 
 # MA: jquery datatables for rails [https://rubygems.org/gems/jquery-datatables-rails]
-gem 'jquery-datatables-rails', '~> 3.4'
+# gem 'jquery-datatables-rails', '~> 3.4'
 
 # MA: Ransack is the successor to the MetaSearch gem. It improves and expands upon MetaSearch's functionality, but does not have a 100%-compatible API. [https://rubygems.org/gems/ransack]
 gem 'ransack', '~> 3.2', '>= 3.2.1'
@@ -88,9 +95,9 @@ group :development do
   # gem "spring"
 
   # MA: Guard is a command line tool to easily handle events on file system modifications. [https://rubygems.org/gems/guard]
-  gem 'guard', '~> 2.18'
+  # gem 'guard', '~> 2.18'
   # MA: Guard::LiveReload automatically reloads your browser when 'view' files are modified. [https://rubygems.org/gems/guard-livereload]
-  gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
+  # gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
 
   # MA: Provides a better error page for Rails and other Rack apps. [https://rubygems.org/gems/better_errors]
   gem 'better_errors', '~> 2.9', '>= 2.9.1'
