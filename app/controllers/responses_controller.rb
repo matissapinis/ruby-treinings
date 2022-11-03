@@ -6,15 +6,13 @@ class ResponsesController < ApplicationController
 
   # GET /responses or /responses.json
   def index
-    # MA: Commenting out to try sortable table columns:
-      # @responses = Response.all
     # MA: Sortable table columns [http://railscasts.com/episodes/228-sortable-table-columns]
-    # @responses = Response.order(sort_column + " " + sort_direction)
-
-    # MA: Filtering implementation attempt [https://activerecord-hackery.github.io/ransack/getting-started/simple-mode/]
+    # MA: Filtering implementation [https://activerecord-hackery.github.io/ransack/getting-started/simple-mode/]
     @q = Response.ransack(params[:q])
-    # @responses_filtered = @q.result(distinct: true)
     @responses = @q.result().order(sort_column + " " + sort_direction)
+
+    # MA: Chartkick-based piechart (filterable) [https://chartkick.com/]
+    @chart_responses = @q.result()
   end
 
   # GET /responses/1 or /responses/1.json

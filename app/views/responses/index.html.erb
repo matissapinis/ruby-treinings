@@ -43,10 +43,10 @@
   </table>
 </div>
 
-<% # MA: Chartkick-based piechart attempt [https://chartkick.com/] %>
+<% # MA: Chartkick-based piechart [https://chartkick.com/] %>
 <div>
-  <%= line_chart [["2021-01-01", 2], ["2021-01-02", 3]] %>
-  <%#= pie_chart @responses.group(:sr_1).count %>
+  <%= pie_chart @chart_responses.group(:sr_1).count, title: "sr_1" %>
+  <% #= pie_chart @responses.reorder('').group(:sr_1).count %>
 </div>
 
 <%= link_to "New response", new_response_path %>
