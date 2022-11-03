@@ -22,30 +22,36 @@
         <td><%= 2022 + @responses.median(:hb_a_1_1).round() %></td>
         <td><%= 2022 + @responses.median(:hb_a_2_1).round() %></td>
         <td><%= 2022 + @responses.median(:hb_a_3_1).round() %></td>
-        <td><%= @responses.median(:vb_1_1).round(1) %></td>
-        <td><%= @responses.median(:vb_1_2).round(1) %></td>
-        <td><%= @responses.median(:vb_1_3).round(1) %></td>
-        <td><%= @responses.median(:vb_1_4).round(1) %></td>
-        <td><%= @responses.median(:vb_1_5).round(1) %></td>
+        <td><%= @responses.median(:vb_1_1).round(1) %>%</td>
+        <td><%= @responses.median(:vb_1_2).round(1) %>%</td>
+        <td><%= @responses.median(:vb_1_3).round(1) %>%</td>
+        <td><%= @responses.median(:vb_1_4).round(1) %>%</td>
+        <td><%= @responses.median(:vb_1_5).round(1) %>%</td>
       </tr>
       <tr>
         <td>Average</td>
         <td><%= 2022 + @responses.average(:hb_a_1_1).round() %></td>
         <td><%= 2022 + @responses.average(:hb_a_2_1).round() %></td>
         <td><%= 2022 + @responses.average(:hb_a_3_1).round() %></td>
-        <td><%= @responses.average(:vb_1_1).round(1) %></td>
-        <td><%= @responses.average(:vb_1_2).round(1) %></td>
-        <td><%= @responses.average(:vb_1_3).round(1) %></td>
-        <td><%= @responses.average(:vb_1_4).round(1) %></td>
-        <td><%= @responses.average(:vb_1_5).round(1) %></td>
+        <td><%= @responses.average(:vb_1_1).round(1) %>%</td>
+        <td><%= @responses.average(:vb_1_2).round(1) %>%</td>
+        <td><%= @responses.average(:vb_1_3).round(1) %>%</td>
+        <td><%= @responses.average(:vb_1_4).round(1) %>%</td>
+        <td><%= @responses.average(:vb_1_5).round(1) %>%</td>
       </tr>
     </tbody>
   </table>
 </div>
 
+<% # MA: Chartkick-based piechart attempt [https://chartkick.com/] %>
+<div>
+  <%= line_chart [["2021-01-01", 2], ["2021-01-02", 3]] %>
+  <%#= pie_chart @responses.group(:sr_1).count %>
+</div>
+
 <%= link_to "New response", new_response_path %>
 
-<% # MA: Filtering implementation attempt [https://activerecord-hackery.github.io/ransack/getting-started/simple-mode/] %>
+<% # MA: Filtering implementation [https://activerecord-hackery.github.io/ransack/getting-started/simple-mode/] %>
 <div>
   <%= search_form_for @q, url: :responses do |form| %>
     <%= form.label :undergrad_continent_cont %>
@@ -63,19 +69,19 @@
   <table id="responses" class="content-table">
     <thead>
       <tr>
-        <th>id</th>
-        <th>undergrad_continent</th>
-        <th>hb_a_1_1</th>
-        <th>hb_a_2_1</th>
-        <th>hb_a_3_1</th>
-        <th>dem_1</th>
-        <th>vb_1_1</th>
-        <th>vb_1_2</th>
-        <th>vb_1_3</th>
-        <th>vb_1_4</th>
-        <th>vb_1_5</th>
-        <th>dem_2</th>
-        <th>sr_1</th>
+        <td>id</td>
+        <td>undergrad_continent</td>
+        <td>hb_a_1_1</td>
+        <td>hb_a_2_1</td>
+        <td>hb_a_3_1</td>
+        <td>dem_1</td>
+        <td>vb_1_1</td>
+        <td>vb_1_2</td>
+        <td>vb_1_3</td>
+        <td>vb_1_4</td>
+        <td>vb_1_5</td>
+        <td>dem_2</td>
+        <td>sr_1</td>
       </tr>
       <tr>
         <th><%= sortable "id", "Response ID" %></th>

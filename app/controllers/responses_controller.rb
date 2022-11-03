@@ -6,7 +6,7 @@ class ResponsesController < ApplicationController
 
   # GET /responses or /responses.json
   def index
-    # MA: Commenting out to try sortable table columns attempt:
+    # MA: Commenting out to try sortable table columns:
       # @responses = Response.all
     # MA: Sortable table columns [http://railscasts.com/episodes/228-sortable-table-columns]
     # @responses = Response.order(sort_column + " " + sort_direction)
