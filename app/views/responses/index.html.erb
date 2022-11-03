@@ -1,9 +1,36 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Responses:
-  <%= @responses.count %>
-</h1>
 
+<% # MA: Metric attempt: %>
+<h1>Metrics:</h1>
+<div>
+  <table class="content-table">
+    <thead>
+      <tr>
+        <td>Metric (n=<%= @responses.count %>)</td>
+        <td>hb_a_1_1</td>
+        <td>hb_a_2_1</td>
+        <td>hb_a_3_1</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Median year</td>
+        <td><%= 2022 + @responses.median(:hb_a_1_1).round() %></td>
+        <td><%= 2022 + @responses.median(:hb_a_2_1).round() %></td>
+        <td><%= 2022 + @responses.median(:hb_a_3_1).round() %></td>
+      </tr>
+      <tr>
+        <td>Average year</td>
+        <td><%= 2022 + @responses.average(:hb_a_1_1).round() %></td>
+        <td><%= 2022 + @responses.average(:hb_a_2_1).round() %></td>
+        <td><%= 2022 + @responses.average(:hb_a_3_1).round() %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h1>Responses:</h1>
 <%= link_to "New response", new_response_path %>
 
 <% # MA: Filtering implementation attempt [https://activerecord-hackery.github.io/ransack/getting-started/simple-mode/] %>
@@ -15,14 +42,29 @@
   <% end %>
 </div>
 
-<% # MA: Drop down filter HTML table data by column: %>
+<% # MA: Drop down filter HTML table data by column attempt: %>
 <% #= collection_select :response, :id, Response.all, :id, :undergrad_continent, prompt: true %>
 
-<% # MA: Display database records in plain HTML table: %>
+<% # MA: Display database records in HTML table: %>
 <div id="responses">
   <% # MA: Sortable table columns [http://railscasts.com/episodes/228-sortable-table-columns] %>
   <table id="responses" class="content-table">
     <thead>
+      <tr>
+        <th>id</th>
+        <th>undergrad_continent</th>
+        <th>hb_a_1_1</th>
+        <th>hb_a_2_1</th>
+        <th>hb_a_3_1</th>
+        <th>dem_1</th>
+        <th>vb_1_1</th>
+        <th>vb_1_2</th>
+        <th>vb_1_3</th>
+        <th>vb_1_4</th>
+        <th>vb_1_5</th>
+        <th>dem_2</th>
+        <th>sr_1</th>
+      </tr>
       <tr>
         <th><%= sortable "id", "Response ID" %></th>
         <th><%= sortable "undergrad_continent", "In which region did you complete your undergraduate study?" %></th>
