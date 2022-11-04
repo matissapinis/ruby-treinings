@@ -3,13 +3,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.0.2"
 
-# MA: Debugging 'fly deploy' issues
-#> [stage-3 7/7] RUN bin/rails fly:build:
-#20 2.482 rails aborted!
-#20 2.483 LoadError: cannot load such file -- sassc
-# MA: You can put the gem 'sassc-rails' line before the gem 'rails' line in your Gemfile as a workaround. [https://github.com/sass/sassc-rails/issues/114]
-gem 'sassc-rails'
-
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
 
@@ -43,6 +36,9 @@ gem "jbuilder"
 # MA: Forms made easy! [https://rubygems.org/gems/simple_form]
 gem 'simple_form', '~> 5.1'
 
+# MA: rspec-rails brings the RSpec testing framework to Ruby on Rails as a drop-in alternative to its default testing framework, Minitest. [https://github.com/rspec/rspec-rails]
+# gem 'rspec-rails', '~> 6.0.0'
+
 # MA: This gem provides jQuery and the jQuery-ujs driver for your Rails 4+ application. [https://rubygems.org/gems/jquery-rails]
 # gem 'jquery-rails', '~> 4.5'
 
@@ -74,7 +70,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
 # Use Sass to process CSS
-# gem "sassc-rails"
+gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -82,6 +78,16 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+
+  # MA
+  gem 'factory_bot_rails'
+  gem 'rspec-rails', '~> 6.0.1'
+  gem 'shoulda-matchers', '~> 5.0'
+
+  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem "capybara"
+  gem "selenium-webdriver"
+  gem "webdrivers"
 end
 
 group :development do
@@ -104,8 +110,4 @@ group :development do
 end
 
 group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
-  gem "selenium-webdriver"
-  gem "webdrivers"
 end
